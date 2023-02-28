@@ -1,0 +1,40 @@
+.error {
+    color: darkred;
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+#tryAgain {
+    display: none;
+    background-color: rgb(226, 229, 194);
+    color: rgb(177, 158, 36);
+    font-size: 1rem;
+    margin-top: 2px;
+    padding: 0.9em;
+    font-weight: bold;
+  }
+
+.login {
+    margin-top: 1.5rem;
+
+}
+
+  .card-body,
+  .login-register-cta {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .card-body{
+    margin-top:1.5rem;
+  }
+
+  .card-body form {
+    width: 100vw;
+    display: contents;
+  }
+
+.container-forms {
+    padding-top: 3rem;
+}
+
