@@ -14,7 +14,7 @@ function Logout() {
 
   function handleLogout(e){
     console.log(e)
-    localStorage.getItem(token)
+    let token = localStorage.getItem(myToken)
 
     if(!token === null || !token === 'undefined') {
         token = null;
