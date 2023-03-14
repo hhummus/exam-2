@@ -1,26 +1,19 @@
-/* 
-
 function Logout() {
 
     return (
-    <button className="logout" id="logout">Log out</button>
+    <button className="logout" id="logout" onClick={handleLogout}>Log out</button>
     )
   }
   
   export default Logout;
 
-  const logoutbutton = document.getElementById('logout');
-  logoutbutton.addEventListener('click', handleLogout);
 
-  function handleLogout(e){
-    console.log(e)
-    let token = localStorage.getItem(myToken)
+function handleLogout(e) {
+  console.log(e)
+  localStorage.setItem("myToken", []);
+  window.document.location="/";
+  };
 
-    if(!token === null || !token === 'undefined') {
-        token = null;
-        window.location.href ="/";
-    }
+
+
  
-  }
-
- */

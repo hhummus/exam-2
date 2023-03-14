@@ -38,7 +38,7 @@ const LoginForm = () => {
                         localStorage.setItem('myToken', token); 
 
                         // going to feed page if response is ok
-                        navigate("/feed");
+                        navigate("feed");
                     } 
                     if(!response.ok) {
                         errorLogin.style.display = "block";
