@@ -1,0 +1,43 @@
+.sectionOne, 
+.sectionTwo, 
+.sectionThree{
+margin-top: 5rem;
+}
+
+.search,
+.feed {
+    margin-top: 2rem;;
+}
+
+
+.sectionTwo{
+    padding: 0 0.70rem;
+}
+.feedTitle {
+    color: #B56A03;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.feedNav .col{
+    margin-top: 1rem;
+}
+.chooseFeed{
+    text-decoration: none;
+    color: grey;
+    padding: 0.5rem;
+}
+
+.chooseFeed:hover, 
+.chooseFeed:active {
+    background-color: darkgray;
+    color: black;
+}
+
+.input{
+    border: none;
+    background-color: #F8F7F7;
+    padding: 1rem;
+
+}
