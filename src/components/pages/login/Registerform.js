@@ -1,4 +1,5 @@
 import { baseUrl, register } from "../../constants/Api"; 
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
 export let token = '';
@@ -6,6 +7,8 @@ const errorLogin = document.getElementById("tryAgain");
 
 // ------ using formik and yup -------- //
 const RegisterForm = () => {
+  const navigate = useNavigate();
+  
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -40,9 +43,10 @@ const RegisterForm = () => {
                         // saved to localStorage
                         token = data.accessToken; 
                         localStorage.setItem('myToken', token); 
+                        localStorage.setItem('name', data.name)
 
                         // going to feed page if response is ok
-                        window.location.href ="feed";
+                        navigate("feed");
                     } 
                     if(!response.ok) {
                         errorLogin.style.display = "block";
