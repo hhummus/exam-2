@@ -6,9 +6,9 @@ import "../../css/Posts.css";
 import deletePost from "./Delete";
 
 const token = localStorage.getItem("myToken");
+const name = localStorage.getItem("name")
 
 const MyPosts = () => {
-
     useEffect(() => {
         getPosts();
     }, []);
@@ -23,10 +23,12 @@ const MyPosts = () => {
             }};
         try {
         // api request
-        const response = await fetch(baseUrl + myPostsEndpoint, settings);
+        const response = await fetch(baseUrl + myPostsEndpoint + name + '/posts', settings);
         const data = await response.json();
+
+        if (response.ok){
         getMyPosts(data);
-       
+         }
         if(!response.ok) {
             console.log("error");
         } 
@@ -47,8 +49,8 @@ const MyPosts = () => {
           }),
         onSubmit: values => {
             const updatePost = async () => {
-               const id = document.querySelector(".posts");
-               id.getAttribute("data-target");
+               const id = document.getElementById("idPost");
+               const theId = id.getAttribute("data-target");
 
                 const settings = {
                     method: 'PUT',
@@ -60,7 +62,7 @@ const MyPosts = () => {
                     }};
                 try {
                     // api request
-                  const response = await fetch(baseUrl + PostEntryEndpoint + '/' + id.id, settings);
+                  const response = await fetch(baseUrl + PostEntryEndpoint + '/' + theId, settings);
                   const data = await response.json();
                   console.log(data)
                 
@@ -74,12 +76,10 @@ const MyPosts = () => {
            updatePost()         
 }})
         
-
-
     return (
     <div>  
         {myPosts.map(post => (      
-        <div className="posts" data-target={Number(post.id)}>
+        <div className="posts" id="idPost" data-target={Number(post.id)}>
             <div className="row titleAndBody">
                 <h3>{post.title}</h3>
                 <p>{post.body}</p>

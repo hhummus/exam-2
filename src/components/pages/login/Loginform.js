@@ -36,7 +36,7 @@ const LoginForm = () => {
                         // saved to localStorage
                         token = data.accessToken; 
                         localStorage.setItem('myToken', token); 
-
+                        localStorage.setItem('name', data.name)
                         // going to feed page if response is ok
                         navigate("feed");
                     } 

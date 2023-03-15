@@ -5,5 +5,5 @@ export const register = "/social/auth/register";
 export const profilesEndpoint = "/social/profiles?limit=10";
 export const postsEndpoint = "/social/posts?limit=10/?_author=true"
 export const PostEntryEndpoint = "/social/posts";
-export const myPostsEndpoint = "/social/profiles/Helena/posts";
+export const myPostsEndpoint = "/social/profiles/";
 export const followProfilesEndpoint = "/social/profiles/";
