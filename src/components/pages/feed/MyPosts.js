@@ -80,13 +80,21 @@ const MyPosts = () => {
     <div>  
         {myPosts.map(post => (      
         <div className="posts" id="idPost" data-target={Number(post.id)}>
-            <div className="row titleAndBody">
-                <h3>{post.title}</h3>
-                <p>{post.body}</p>
+            <div className="postContainer">
+                <div className="row">
+                    <div className="col">
+                        <small className="post-id">post id: {post.id}</small>
+                    </div>
+                </div>
             </div>
-            
+            <div className="row postBody">
+                    <div className="col">
+                        <h3>{post.title}</h3>
+                        <p>{post.body}</p>
+                    </div>
+            </div>
             <div className="row commentAndEmoji">
-                <div className="col-3 editYourPost">
+                <div className="col editYourPost">
                     <button type="button" class="btn btn-primary getIdButton" data-toggle="modal" data-target="#exampleModalCenter" >
                         Edit
                     </button>
@@ -148,10 +156,11 @@ const MyPosts = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="col-3 deleteYourPost">
+                <div className="col deleteYourPost">
                 <button type="button" onClick={deletePost} data-target={post.id}>Delete</button>
             </div>
+            </div>
+            
         </div>    
         ))} 
     </div>

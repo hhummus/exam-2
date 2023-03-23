@@ -37,7 +37,7 @@ const Profiles = () => {
 
 return (
     <div>
-        {profiles.map(profile => (      
+        {profiles.forEach(profile => (      
             <div className="profiles" id={profile.id} data-target={profile.id} key={profile.id}>
                 <div className="row">
                     <div className="col">
