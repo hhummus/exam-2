@@ -4,6 +4,7 @@
 }
 
 .postAPost{
+    margin-top: 1.2rem;
     background-color: #b56b039d;
     border: none;
     border-radius: 0.2ch;
@@ -14,9 +15,65 @@
 }
 
 .postBody{
-    background-color: #f9f9f9;
-    padding: 0.2rem 0;
-    margin: 0;
+    background-color: #e7e6e661;
+    margin-top: 1rem;
+    padding: 0.4rem 0;
+    border-radius: 1ch;
 }
 
+.postBody h3{
+    font-size: 1.2rem;
+}
+.postBody p{
+    font-size: 1rem;
+    color: #707070;
+}
 
+.labelpost{
+    background-color: #F8F7F7;
+    padding: 0.3rem 0;
+    border: none;
+}
+
+.commentOnPost,
+.postAComment{
+    padding: 0.6rem;
+    border-radius: 1ch;
+}
+
+.commentOnPost {
+    border:none;
+
+}
+.postAComment{
+    margin-left: 0.4rem;
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+    border:none;
+    background: none;
+    color: #b56b03;;
+}
+.postAComment:hover{
+    background-color: #b56b03;
+    color: white;
+}
+
+.commentOnPost:focus {
+    outline: 1px solid #b56b03db;
+    
+}
+.post-id{
+    color: #C9C9C9;
+}
+
+.followContainer{
+    text-align: end;
+}
+.followButton {
+    color: #2462B7;
+    border: none;
+    background-color: white;
+}
+.followButton:hover{
+    font-weight: 700;
+}

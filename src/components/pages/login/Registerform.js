@@ -63,7 +63,7 @@ const RegisterForm = () => {
         <form onSubmit={formik.handleSubmit}>
           <small id="tryAgain">Something went wrong. Please check that all values are correct.</small>
 
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="labelLogin">Email</label>
           <input pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only Noroff emails can register"
             id="email"
             name="email"
@@ -75,7 +75,7 @@ const RegisterForm = () => {
              <small className="error">{formik.errors.email}</small>
             ) : null}
 
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name" className="labelLogin">Name</label>
           <input 
             id="name"
             name="name"
@@ -87,7 +87,7 @@ const RegisterForm = () => {
              <small className="error">{formik.errors.name}</small>
             ) : null}
  
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="labelLogin">Password</label>
           <input 
             id="password"
             name="password"
@@ -99,7 +99,7 @@ const RegisterForm = () => {
               <small className="error">{formik.errors.password}</small>
             ) : null}
 
-            <label htmlFor="password2">Fill in your password again</label>
+            <label htmlFor="password2" className="labelLogin">Fill in your password again</label>
             <input 
             id="password2"
             name="password2"
@@ -113,7 +113,7 @@ const RegisterForm = () => {
 
           <button 
            type="submit" 
-           className="login"
+           className="login labelLoginButton"
            id="loginButton"
            name="loginButton">
             Register and log in</button>        

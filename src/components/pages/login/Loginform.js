@@ -55,7 +55,7 @@ const LoginForm = () => {
         <form onSubmit={formik.handleSubmit}>
           <small id="tryAgain">Something went wrong. Email or password incorrect.</small>
 
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="labelLogin">Email</label>
           <input pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only Noroff emails can register"
             id="email"
             name="email"
@@ -67,7 +67,7 @@ const LoginForm = () => {
              <small className="error">{formik.errors.email}</small>
             ) : null}
  
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="labelLogin">Password</label>
           <input 
             id="password"
             name="password"
@@ -81,7 +81,7 @@ const LoginForm = () => {
 
           <button 
            type="submit" 
-           className="login"
+           className="login labelLoginButton"
            id="loginButton"
            name="loginButton">
             Log in</button>        

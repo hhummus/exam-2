@@ -64,6 +64,7 @@ const PostaPost = () => {
                     id="title"
                     name="title"
                     type="text"
+                    className="labelpost"
                     onChange={formik.handleChange}
                     value={formik.values.title}
                     />
@@ -80,6 +81,7 @@ const PostaPost = () => {
                     id="body"
                     name="body"
                     type="text"
+                    className="labelpost"
                     onChange={formik.handleChange}
                     value={formik.values.body}
                     />
@@ -96,6 +98,8 @@ const PostaPost = () => {
                     id="media"
                     name="media"
                     type="url"
+                    placeholder="Must be a valid and free photo from URL"
+                    className="labelpost"
                     onChange={formik.handleChange}
                     value={formik.values.media}
                     />

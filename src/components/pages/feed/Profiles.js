@@ -44,7 +44,7 @@ return (
                         <p>{profile.name}</p>
                     </div>
                     <div className="col">
-                        <button type="button" onClick={followUnfollow} data-target={profile.name}>Follow</button>
+                        <button type="button" className="followButton" onClick={followUnfollow} data-target={profile.name}>Follow</button>
                     </div>
                 </div>
 

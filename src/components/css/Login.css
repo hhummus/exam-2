@@ -1,39 +1,88 @@
 .error {
-    color: darkred;
-    font-size: 0.9rem;
-    margin-top: 2px;
+  color: darkred;
+  font-size: 0.9rem;
+  margin-top: 2px;
 }
 
 #tryAgain {
-    display: none;
-    background-color: rgb(226, 229, 194);
-    color: rgb(177, 158, 36);
-    font-size: 1rem;
-    margin-top: 2px;
-    padding: 0.9em;
-    font-weight: bold;
-  }
+  display: none;
+  background-color: rgb(226, 229, 194);
+  color: rgb(177, 158, 36);
+  font-size: 1rem;
+  margin-top: 2px;
+  padding: 0.9em;
+  font-weight: bold;
+}
 
 .login {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.login-cta,
+.register-cta {
+  background-color: white;
+  margin-right: 1rem;
+  border: none;
+  border-bottom: 4px solid #B56A03;
+  padding:0.2rem 0.5rem;
+}
+
+.login-cta:hover,
+.register-cta:hover {
+  background-color: #B56A03;
+  color: white;
+}
+
+.card-body{
+  margin-top:1.5rem;
+  border: none;
+}
+
+.card-body input, 
+.card-body small{
+  margin-bottom: 0.9rem;
+}
+
+.card-body input {
+  background-color: #F8F7F7;
+  padding: 0.3rem 0;
+  border: none;
+}
+
+.card-body input:focus {
+outline: 2px solid #b56b03db;
 
 }
 
-  .card-body,
-  .login-register-cta {
-    width: 80vw;
+.card-body form {
+  width: 100vw;
+  display: contents;
+}
+
+.container-forms {
+  padding-top: 3rem;
+}
+
+.labelLoginButton {
+  background-color: #b56b0399;
+  color: white;
+  padding:0.2rem 0.5rem;
+  border: none;
+}
+.labelLoginButton:active{
+  background-color: #b56b03;
+}
+
+.commentContainer {
+  padding: 0.4rem;
+}
+
+/* if bigger than xx change settings*/
+@media screen and (min-width: 769px) {
+  .container-forms {
+    padding-top: 6rem;
+    width: 40vw;
     margin: 0 auto;
   }
 
-  .card-body{
-    margin-top:1.5rem;
-  }
-
-  .card-body form {
-    width: 100vw;
-    display: contents;
-  }
-
-.container-forms {
-    padding-top: 3rem;
 }

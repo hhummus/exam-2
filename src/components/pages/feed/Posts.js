@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { postsEndpoint, baseUrl  } from "../../constants/Api";
 import PostaComment from "./CommentOnPost";
+import followUnfollow from "./FollowUnfollow";
 import "../../css/Posts.css";
 
 const token = localStorage.getItem("myToken");
@@ -38,15 +39,33 @@ const Posts = () => {
     <div>
     {posts.map(post => (      
         <div className="posts" id={post.id} data-target={post.id}>
-            <div className="row postTitle">
-                <div className="col-9"><h3>{post.title}</h3></div>
-                <div className="col-3">emoji</div>
-              
+            <div className="postContainer">
+                <div className="row">
+                    <div className="col">
+                        <small className="post-id">post id: {post.id}</small>
+                    </div>
+                    <div className="col followContainer"> 
+                        <button type="button" 
+                        className="followButton" 
+                        onClick={followUnfollow} 
+                        data-target={post.name}>Follow
+                        </button>
+                    </div>
+                </div>
+                <div className="row postBody">
+                    <div className="col">
+                        <h3>{post.title}</h3>
+                        <p>{post.body}</p>
+                    </div>
+                   
+                <PostaComment id={Number(post.id)}/> 
+               
+                </div>
+               
+               
+                
             </div>
-            <div className="row postBody"> <p>{post.body}</p></div>
-           <PostaComment id={Number(post.id)}/>
-
-           
+               
        </div>
     ))}
     </div>

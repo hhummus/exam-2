@@ -44,7 +44,8 @@ const PostaComment = (props) => {
     });  
 
     return (
-        <form onSubmit={formik.handleSubmit} className="commentContainer">
+        
+            <form onSubmit={formik.handleSubmit} className="commentContainer">
             <small id="tryAgain">Check your wifi network and try again.</small>
        
                     <label htmlFor="body"></label>
@@ -52,6 +53,8 @@ const PostaComment = (props) => {
                     id="body"
                     name="body"
                     type="text"
+                    placeholder="Comment here..."
+                    className="commentOnPost"
                     onChange={formik.handleChange}
                     value={formik.values.body}
                     />
@@ -66,7 +69,9 @@ const PostaComment = (props) => {
                     name="postButton">
                     Post Comment
                     </button>  
-        </form>
+            </form>
+        
+        
     )
 }
 
