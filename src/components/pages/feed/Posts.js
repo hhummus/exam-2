@@ -47,7 +47,7 @@ const Posts = () => {
                     <div className="col followContainer"> 
                         <button type="button" 
                         className="followButton" 
-                        onClick={followUnfollow} 
+                        
                         data-target={post.name}>Follow
                         </button>
                     </div>

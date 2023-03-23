@@ -1,4 +1,4 @@
-import { baseUrl, followProfilesEndpoint } from "../../constants/Api";
+/* import { baseUrl, followProfilesEndpoint } from "../../constants/Api";
 const token = localStorage.getItem("myToken");
 const followingStored = localStorage.getItem('following')
 
@@ -71,3 +71,4 @@ export default function followUnfollow(e){
     }
 }
 
+ */

@@ -37,14 +37,14 @@ const Profiles = () => {
 
 return (
     <div>
-        {profiles.forEach(profile => (      
+        {profiles.map(profile => (      
             <div className="profiles" id={profile.id} data-target={profile.id} key={profile.id}>
                 <div className="row">
                     <div className="col">
                         <p>{profile.name}</p>
                     </div>
                     <div className="col">
-                        <button type="button" className="followButton" onClick={followUnfollow} data-target={profile.name}>Follow</button>
+                        <button type="button" className="followButton" data-target={profile.name}>Follow</button>
                     </div>
                 </div>
 
