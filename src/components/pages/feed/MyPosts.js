@@ -95,24 +95,24 @@ const MyPosts = () => {
             </div>
             <div className="row commentAndEmoji">
                 <div className="col editYourPost">
-                    <button type="button" class="btn btn-primary getIdButton" data-toggle="modal" data-target="#exampleModalCenter" >
+                    <button type="button" className="btn btn-primary getIdButton" data-toggle="modal" data-target="#exampleModalCenter" >
                         Edit
                     </button>
-                    <div class="modal fade" 
+                    <div className="modal fade" 
                     id="exampleModalCenter" 
                     tabindex="-1" 
                     role="dialog"     
                     aria-labelledby="exampleModalCenterTitle" 
                     aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Edit your Post</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <div className="modal-dialog modal-dialog-centered" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLongTitle">Edit your Post</h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
+                                <div className="modal-body">
                                     <form onSubmit={formik.handleSubmit}  className="container">
                                     <small id="tryAgain">Check your wifi network and try again.</small>
        
@@ -149,16 +149,16 @@ const MyPosts = () => {
                                     </button>  
                                     </form>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>      
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>      
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="col deleteYourPost">
-                <button type="button" onClick={deletePost} data-target={post.id}>Delete</button>
-            </div>
+                    <button type="button" onClick={deletePost} data-target={post.id}>Delete</button>
+                </div>
             </div>
             
         </div>    

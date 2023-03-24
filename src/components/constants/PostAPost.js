@@ -35,7 +35,7 @@ const PostaPost = () => {
                     // api request
                   const response = await fetch(baseUrl + PostEntryEndpoint, settings);
                   const data = await response.json();
-                 console.log(data)
+                  console.log(data)
                     if(response.ok) {
                         console.log(data)
                     } 
@@ -56,7 +56,7 @@ const PostaPost = () => {
             <fieldset>
             <div className="container">
                 <legend>What do you want to share?</legend>
-                <div class="row">
+                <div className="row">
                     <label htmlFor="title" className="label">Title</label>
                 </div>
                 <div className="row">

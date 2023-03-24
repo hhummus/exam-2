@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { profilesEndpoint, baseUrl  } from "../../constants/Api";
-import followUnfollow from "./FollowUnfollow";
+import FollowUnfollowButton from "./FollowUnfollowButton";
 import "../../css/Posts.css";
 const token = localStorage.getItem("myToken");
 
@@ -11,6 +11,7 @@ const Profiles = () => {
 
 
     const [profiles, setProfiles] = useState([]);
+    const [error, setError] = useState(null);
     
     
     const getProfiles = async () => {
@@ -23,15 +24,16 @@ const Profiles = () => {
         // api request
         const response = await fetch(baseUrl + profilesEndpoint, settings);
         const data = await response.json();
-
-        setProfiles(data);
         console.log(data);
-    
-        if(!response.ok) {
-            console.log("error");
-        } 
+        
+        if(response.ok) {
+            setProfiles(data);
+        } else {
+            setError('Something went wrong.')
+        }
+
     } catch (err) {
-      console.log('error', err);
+        setError('Something went wrong.', err)
     }
 }
 
@@ -42,9 +44,10 @@ return (
                 <div className="row">
                     <div className="col">
                         <p>{profile.name}</p>
+                        <p>{error}</p>
                     </div>
                     <div className="col">
-                        <button type="button" className="followButton" data-target={profile.name}>Follow</button>
+                       <FollowUnfollowButton followers={profile.followers} profileName={profile.name} />
                     </div>
                 </div>
 

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { postsEndpoint, baseUrl  } from "../../constants/Api";
 import PostaComment from "./CommentOnPost";
-import followUnfollow from "./FollowUnfollow";
 import "../../css/Posts.css";
 
 const token = localStorage.getItem("myToken");
@@ -42,23 +41,24 @@ const Posts = () => {
             <div className="postContainer">
                 <div className="row">
                     <div className="col">
-                        <small className="post-id">post id: {post.id}</small>
+                        <p className="">{post.author.name}</p>
                     </div>
                     <div className="col followContainer"> 
-                        <button type="button" 
-                        className="followButton" 
-                        
-                        data-target={post.name}>Follow
-                        </button>
+                     
                     </div>
                 </div>
                 <div className="row postBody">
-                    <div className="col">
+                    <div className="col-10">
                         <h3>{post.title}</h3>
                         <p>{post.body}</p>
                     </div>
+                    <div className="col-2">   
+                        <small className="post-id">id {post.id}</small>
+                    </div>
+                
+                    
                    
-                <PostaComment id={Number(post.id)}/> 
+                    <PostaComment id={Number(post.id)}/> 
                
                 </div>
                

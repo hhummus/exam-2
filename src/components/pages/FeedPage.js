@@ -27,7 +27,7 @@ function FeedPage() {
         <div className="sectionTwo" id="myGroup">
             <div className="container">
                 <h2 className="feedTitle">Your feed</h2>
-                <div class="row feedNav">
+                <div className="row feedNav">
                     <div className="col">
                     <a className="chooseFeed" data-toggle="collapse" href="#allPosts" role="button" aria-expanded="false" aria-controls="collapseExample">
                         All Posts
