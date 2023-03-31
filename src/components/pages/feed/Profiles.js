@@ -42,15 +42,15 @@ return (
         {profiles.map(profile => (      
             <div className="profiles" id={profile.id} data-target={profile.id} key={profile.id}>
                 <div className="row">
-                    <div className="col">
-                        <p>{profile.name}</p>
-                        <p>{error}</p>
-                    </div>
-                    <div className="col">
-                       <FollowUnfollowButton followers={profile.followers} profileName={profile.name} />
-                    </div>
+                        <div className="col-8 profileName">
+                            <p>{profile.name}</p>
+                            <p>{error}</p>
+                        </div>
+                        <div className="col-4 profileBtn">
+                            <FollowUnfollowButton followers={profile.followers} profileName={profile.name} />
+                        </div>  
+              
                 </div>
-
             </div>
         ))}
     </div>

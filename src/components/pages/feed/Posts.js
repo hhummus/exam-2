@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { postsEndpoint, baseUrl  } from "../../constants/Api";
 import PostaComment from "./CommentOnPost";
 import "../../css/Posts.css";
-
 const token = localStorage.getItem("myToken");
 
 const Posts = () => {
@@ -33,7 +33,6 @@ const Posts = () => {
         console.log('error', err);
         }
     }
-
     return (
     <div>
     {posts.map(post => (      
@@ -41,31 +40,23 @@ const Posts = () => {
             <div className="postContainer">
                 <div className="row">
                     <div className="col">
-                        <p className="">{post.author.name}</p>
+                         <Link to={`/feed/profiles/${post.author.name}`}>{post.author.name}</Link>
                     </div>
                     <div className="col followContainer"> 
                      
                     </div>
                 </div>
                 <div className="row postBody">
-                    <div className="col-10">
+                    <div className="col-9">
                         <h3>{post.title}</h3>
                         <p>{post.body}</p>
                     </div>
-                    <div className="col-2">   
+                    <div className="col-3">   
                         <small className="post-id">id {post.id}</small>
                     </div>
-                
-                    
-                   
                     <PostaComment id={Number(post.id)}/> 
-               
                 </div>
-               
-               
-                
-            </div>
-               
+            </div>  
        </div>
     ))}
     </div>

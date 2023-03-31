@@ -10,8 +10,8 @@ const App = () => {
       <Routes>
         <Route path="feed" element={<FeedPage />} />
         <Route path="/" element={<LoginRegister />} />
-        <Route path="profile/:id" element={<ProfilePage />} />
-        <Route path="your-profil/:name" element={<UsersPage />} />
+        <Route path="/feed/your-profile/:name" element={<ProfilePage />} />
+        <Route path="/feed/profiles/:name" element={<UsersPage />} />
 
         <Route path="*" element={<div>feil</div>} /> 
       </Routes>

@@ -35,7 +35,7 @@ const PostaPost = () => {
                     // api request
                   const response = await fetch(baseUrl + PostEntryEndpoint, settings);
                   const data = await response.json();
-                  console.log(data)
+                 
                     if(response.ok) {
                         console.log(data)
                     } 

@@ -7,6 +7,7 @@ function Logout() {
   function handleLogout(e) {
   console.log(e)
   localStorage.setItem("myToken", []);
+  localStorage.setItem("name", [])
   navigate("/")
   };
 
