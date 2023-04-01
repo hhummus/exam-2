@@ -38,7 +38,7 @@ const MyPosts = () => {
     return (
     <div>  
         {myPosts.map(post => (      
-        <div className="posts" id={post.id} data-target={Number(post.id)}>
+        <div className="posts" id={post.id} data-target={Number(post.id)} key={post.id}>
             <div className="postContainer">
                 <div className="row">
                     <div className="col">

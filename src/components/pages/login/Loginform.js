@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
 export let token = '';
+export let name = '';
 const errorLogin = document.getElementById("tryAgain");
 
 // ------ using formik and yup -------- //
@@ -31,12 +32,13 @@ const LoginForm = () => {
                     // api request
                   const response = await fetch(baseUrl + authEndpoint, settings);
                   const data = await response.json();
-                 console.log(data)
                     if(response.ok) {
+                      console.log(data)
                         // saved to localStorage
                         token = data.accessToken; 
+                        name = data.name;
                         localStorage.setItem('myToken', token); 
-                        localStorage.setItem('name', data.name)
+                        localStorage.setItem('name', name)
                         // going to feed page if response is ok
                         navigate("feed");
                     } 

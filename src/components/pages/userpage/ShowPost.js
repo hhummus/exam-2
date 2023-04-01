@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { postsEndpoint, baseUrl  } from "../../constants/Api";
-import PostaComment from "./CommentOnPost";
+import { followProfilesEndpoint, baseUrl  } from "../../constants/Api.js";
+import PostaComment from "../feed/CommentOnPost.js";
 import "../../css/Posts.css";
 const token = localStorage.getItem("myToken");
 
-const Posts = () => {
+const ShowPost = (props) => {
     useEffect(() => {
         getPosts();
     }, []);
@@ -20,14 +19,11 @@ const Posts = () => {
             }};
         try {
         // api request
-        const response = await fetch(baseUrl + postsEndpoint, settings);
-        const data = await response.json();
-
-        setPosts(data);
-        console.log(data);
-    
-        if(!response.ok) {
-            console.log("error");
+        const response = await fetch(baseUrl + followProfilesEndpoint + props.user + '/posts', settings);
+        const data = await response.json(); 
+        if(response.ok) {
+            setPosts(data);
+            console.log(data);
         } 
         } catch (err) {
         console.log('error', err);
@@ -38,14 +34,6 @@ const Posts = () => {
     {posts.map(post => (      
         <div className="posts" id={post.id} data-target={post.id} key={post.id}>
             <div className="postContainer">
-                <div className="row">
-                    <div className="col">
-                         <Link to={`/feed/profiles/${post.author.name}`}>{post.author.name}</Link>
-                    </div>
-                    <div className="col followContainer"> 
-                     
-                    </div>
-                </div>
                 <div className="row postBody">
                     <div className="col-9">
                         <h3>{post.title}</h3>
@@ -62,4 +50,4 @@ const Posts = () => {
     </div>
     )
 }
-export default Posts;
+export default ShowPost;
