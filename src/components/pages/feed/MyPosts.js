@@ -53,11 +53,11 @@ const MyPosts = () => {
                     </div>
             </div>
             <div className="row commentAndEmoji">
-                <div className="col">
                     <EditMyPost  postId={Number(post.id)}/>
-                </div>
-                <div className="col deleteYourPost">
-                    <button type="button" onClick={deletePost} data-target={post.id}>Delete</button>
+             
+                <div className="col-3 deleteYourPost">
+                    <button type="button" onClick={deletePost} data-target={post.id}>Delete
+                    </button>
                 </div>
             </div>
             

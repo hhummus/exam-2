@@ -3,6 +3,10 @@
     padding: 1rem 0.5rem;
 }
 
+.commentAndEmoji {
+    justify-content: end;
+    margin-top: 0.4rem;
+}
 
 .profileName {
     background-color: #e7e6e661;
@@ -94,4 +98,20 @@
 }
 .followButton:hover{
     font-weight: 700;
+}
+
+.deleteYourPost button {
+    background-color: #b56b039d;
+    border: none;
+    border-radius: 0.2ch;
+    color: white;
+    padding: 0.4rem 0.8rem;
+}
+.editYourPost button{
+    background-color: #1B8ED6;
+    border: none;
+    border-radius: 0.2ch;
+    color: white;
+    padding: 0.4rem 0.8rem;
+
 }

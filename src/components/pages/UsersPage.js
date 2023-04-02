@@ -7,7 +7,8 @@ import Logout from "../navigation/Logout";
 import ShowPost from "./userpage/ShowPost";
 import "../css/ProfileUser.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-  import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 const token = localStorage.getItem("myToken")
 
 export default function UsersPage() {
@@ -19,6 +20,7 @@ export default function UsersPage() {
     }, []);
 
     const [profile, setProfile] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const getProfile = async () => {
         const settings = {
@@ -29,17 +31,27 @@ export default function UsersPage() {
         try {
         // api request
         const response = await fetch(baseUrl + followProfilesEndpoint + name, settings);
+        setLoading(true);
         const data = await response.json();
             if(response.ok) {
             setProfile(data);
+            setLoading(false);
             let imgOk = (data.banner) ? `<img src="${data.banner}" alt="banner display" />` : `<p>Doesn't seem like ${data.name} has uploaded a banner photo just yet.</p>`
             console.log(data, imgOk)
             } 
 
         } catch (err) {
+            setLoading(false);
             console.log('error', err);
         }
     }
+    // return a Spinner when loading is true
+    if(loading) return (
+        <span>
+            <FontAwesomeIcon icon={faSpinner} className="fa-solid fa-spinner" />
+        </span>
+      );
+    // when data is ready return the content
     return (
     <div>
         <div className="container">
@@ -62,10 +74,10 @@ export default function UsersPage() {
                     <h1>{profile.name}</h1>
                     <div className="row">
                         <div className="col followers">
-                         {/* <p>{profile._count.followers} followers</p>  */}  
+                         <p>{profile._count.followers} followers</p> 
                         </div>
                         <div className="col following">
-                            {/* <p>{profile._count.followers} following</p>   */}
+                            <p>{profile._count.followers} following</p> 
                         </div>
                     </div>
                 </div>  

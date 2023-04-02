@@ -43,8 +43,8 @@ function EditMyPost(props) {
     }})
 
   return (
-    <div className="col editYourPost">
-    <button type="button" className="btn btn-primary getIdButton" data-toggle="modal" data-target="#exampleModalCenter" >
+    <div className="col-3 editYourPost">
+    <button type="button" className="getIdButton" data-toggle="modal" data-target="#exampleModalCenter" >
         Edit
     </button>
     <div className="modal fade" 
