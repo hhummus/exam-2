@@ -37,7 +37,10 @@ const PostaPost = () => {
                   const data = await response.json();
                  
                     if(response.ok) {
+                        alert('Youve posted a post');
+                        window.location.reload();
                         console.log(data)
+
                     } 
                     if(!response.ok) {
                         errorLogin.style.display = "block";

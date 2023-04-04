@@ -17,6 +17,16 @@
     margin: 0;
     padding: 0 0 0 1rem;
 }
+.profileName a,
+.postContainer a {
+    cursor: pointer;
+    color: #1B8ED6;
+    text-decoration: none;
+    font-weight: 700;
+}
+.profileName a {
+    padding-left: 1rem;
+}
 .profileBtn{
     background-color: #1B8ED6;
     border-radius: 0 1ch 1ch 0;

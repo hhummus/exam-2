@@ -18,13 +18,13 @@
   margin-top: 1.5rem;
 }
 
-.login-cta,
-.register-cta {
-  background-color: white;
+.titleLogin,
+.titleRegister {
   margin-right: 1rem;
   border: none;
   border-bottom: 4px solid #B56A03;
   padding:0.2rem 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .login-cta:hover,
@@ -34,8 +34,18 @@
 }
 
 .card-body{
-  margin-top:1.5rem;
+  margin-top:3.5rem;
   border: none;
+}
+.containerBtn {
+  text-align: center;
+}
+.registerLoginBtn {
+  margin-top: 1rem;
+  background-color: transparent;
+  font-style: italic;
+  color: #1B8ED6;
+  border: none
 }
 
 .card-body input, 
@@ -79,10 +89,11 @@ outline: 2px solid #b56b03db;
 
 /* if bigger than xx change settings*/
 @media screen and (min-width: 769px) {
+  .card-body,
   .container-forms {
-    padding-top: 6rem;
     width: 40vw;
     margin: 0 auto;
   }
+
 
 }

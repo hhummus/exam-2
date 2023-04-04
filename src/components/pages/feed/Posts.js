@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { postsEndpoint, baseUrl  } from "../../constants/Api";
 import PostaComment from "./CommentOnPost";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import "../../css/Posts.css";
 const token = localStorage.getItem("myToken");
 
@@ -11,6 +13,7 @@ const Posts = () => {
     }, []);
 
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
     
     const getPosts = async () => {
         const settings = {
@@ -19,20 +22,27 @@ const Posts = () => {
                 Authorization: `Bearer ${token}`
             }};
         try {
+        setLoading(true);
         // api request
         const response = await fetch(baseUrl + postsEndpoint, settings);
         const data = await response.json();
-
-        setPosts(data);
-        console.log(data);
     
-        if(!response.ok) {
-            console.log("error");
+        if(response.ok) {
+            setPosts(data);
+            setLoading(false);
+            console.log(data);
         } 
         } catch (err) {
         console.log('error', err);
         }
     }
+    // return a Spinner when loading is true
+    if(loading) return (
+        <span>
+            <FontAwesomeIcon icon={faSpinner} className="fa-solid fa-spinner" />
+        </span>
+      );
+    // else return content 
     return (
     <div>
     {posts.map(post => (      

@@ -23,7 +23,6 @@ const ShowPost = (props) => {
         const data = await response.json(); 
         if(response.ok) {
             setPosts(data);
-            console.log(data);
         } 
         } catch (err) {
         console.log('error', err);

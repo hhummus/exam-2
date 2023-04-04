@@ -67,14 +67,14 @@ function FeedPage() {
                 <SearchForm placeholder={"Search profiles by name..."} id={"SearchProfiles"}/>
             </div>
                 <div className="container feed">
-                    < Profiles />
+                    <Profiles/>
                 </div>
             </div>
             <div className="collapse" 
             id="yourPost" 
             data-parent="#myGroup">
                 <div className="container feed">
-                    <MyPosts />
+                    <MyPosts/>
                 </div>
             </div>
         </div>  

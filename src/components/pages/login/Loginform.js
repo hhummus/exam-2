@@ -86,7 +86,7 @@ const LoginForm = () => {
            className="login labelLoginButton"
            id="loginButton"
            name="loginButton">
-            Log in</button>        
+            Log in</button>      
         </form>
       );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { profilesEndpoint, baseUrl  } from "../../constants/Api";
 import FollowUnfollowButton from "./FollowUnfollowButton";
+import { Link } from "react-router-dom";
 import "../../css/Posts.css";
 const token = localStorage.getItem("myToken");
 
@@ -9,10 +10,8 @@ const Profiles = () => {
         getProfiles();
     }, []);
 
-
     const [profiles, setProfiles] = useState([]);
     const [error, setError] = useState(null);
-    
     
     const getProfiles = async () => {
         const settings = {
@@ -31,19 +30,17 @@ const Profiles = () => {
         } else {
             setError('Something went wrong.')
         }
-
     } catch (err) {
         setError('Something went wrong.', err)
     }
 }
-
 return (
     <div>
         {profiles.map(profile => (      
             <div className="profiles" id={profile.id} data-target={profile.id} key={profile.id}>
                 <div className="row">
                         <div className="col-8 profileName">
-                            <p>{profile.name}</p>
+                        <Link to={`/feed/profiles/${profile.name}`}>{profile.name}</Link>
                             <p>{error}</p>
                         </div>
                         <div className="col-4 profileBtn">

@@ -5,6 +5,7 @@ import * as yup from "yup";
 export let token = '';
 const errorLogin = document.getElementById("tryAgain");
 
+
 // ------ using formik and yup -------- //
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -99,7 +100,7 @@ const RegisterForm = () => {
               <small className="error">{formik.errors.password}</small>
             ) : null}
 
-            <label htmlFor="password2" className="labelLogin">Fill in your password again</label>
+            <label htmlFor="password2" className="labelLogin">Repeat password</label>
             <input 
             id="password2"
             name="password2"

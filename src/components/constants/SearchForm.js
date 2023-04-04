@@ -8,9 +8,7 @@ function SearchForm(props) {
     let lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase) 
     console.log(inputText)
-  
-}
-
+  }
 
   return (
     <form className="SearchAndPostInputForm" id={props.id}>
