@@ -1,7 +1,7 @@
 import { baseUrl, PostEntryEndpoint } from '../../constants/Api';
 import * as yup from 'yup';
 import { useFormik } from "formik";
-
+import "../../css/ProfileUser.css";
 const token = localStorage.getItem("myToken");
 
 function EditMyPost(props) {
@@ -65,11 +65,12 @@ function EditMyPost(props) {
                     <form onSubmit={formik.handleSubmit}  className="container">
                     <small id="tryAgain">Check your wifi network and try again.</small>
 
-                    <label htmlFor="title"></label>
+                    <label htmlFor="title">Title</label>
                     <input
                     id="title"
                     name="title"
                     type="text"
+                    className="editTitle"
                     onChange={formik.handleChange}
                     value={formik.values.title}
                     />
@@ -77,11 +78,12 @@ function EditMyPost(props) {
                     <small className="error">{formik.errors.title}</small>
                     ) : null}
 
-                    <label htmlFor="body"></label>
+                    <label htmlFor="body">Body</label>
                     <input
                     id="body"
                     name="body"
                     type="text"
+                    className="editBody"
                     onChange={formik.handleChange}
                     value={formik.values.body}
                     />
@@ -99,7 +101,7 @@ function EditMyPost(props) {
                     </form>
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>      
+                    <button type="button" className="closeUpdateAvatar" data-dismiss="modal">Close</button>      
                 </div>
             </div>
         </div>

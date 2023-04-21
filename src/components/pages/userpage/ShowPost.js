@@ -28,10 +28,13 @@ const ShowPost = (props) => {
         console.log('error', err);
         }
     }
+
     return (
     <div>
-    {posts.map(post => (      
+        {/*----if user has no posts display that, else display posts ------ */ }
+    { !posts.length <= 0 ? posts.map(post => (     
         <div className="posts" id={post.id} data-target={post.id} key={post.id}>
+             <h2>{props.user}'s latest posts</h2>
             <div className="postContainer">
                 <div className="row postBody">
                     <div className="col-9">
@@ -45,7 +48,7 @@ const ShowPost = (props) => {
                 </div>
             </div>  
        </div>
-    ))}
+    )) : <h2 className="noPostsYet">{props.user} has not posted anything yet.</h2>}
     </div>
     )
 }

@@ -3,6 +3,7 @@ import { myPostsEndpoint, baseUrl  } from "../../constants/Api";
 import "../../css/Posts.css";
 import deletePost from "./Delete";
 import EditMyPost from "./EditMyPost";
+import { Link } from "react-router-dom";
 
 const token = localStorage.getItem("myToken");
 const name = localStorage.getItem("name")
@@ -36,8 +37,11 @@ const MyPosts = () => {
         }
     } 
     return (
-    <div>  
-        {myPosts.map(post => (      
+    <div className="feedContainer">  
+      
+            <Link to={`/feed/your-profile/${name}`} id="visitYourProfil">Go to my profile</Link>
+       
+        {!myPosts.length <= 0 ?myPosts.map(post => (      
         <div className="posts" id={post.id} data-target={Number(post.id)} key={post.id}>
             <div className="postContainer">
                 <div className="row">
@@ -62,7 +66,7 @@ const MyPosts = () => {
             </div>
             
         </div>    
-        ))} 
+        )) : <p className="noPostsYet">You haven't posted anything yet. Go to the top of the page and post your first post! </p>} 
     </div>
     )
 }

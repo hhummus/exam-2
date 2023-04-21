@@ -3,17 +3,18 @@ import { useState } from "react";
 import LoginForm from "./login/Loginform";
 import RegisterForm from "./login/Registerform";
 import "../../components/css/Login.css";
+import FooterGlobal from "../constants/footer";
 
 
 
 
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
-  const [buttonText, setButtonText] = useState("Or register here");
+  const [buttonText, setButtonText] = useState("Don't have an account? Register here");
 
   const handleOnClick = () => {
     setIsLogin(!isLogin);
-   (buttonText === "Or register here" ? setButtonText("Already have an account? Log in here") : setButtonText("Or register here"))
+   (buttonText === "Don't have an account? Register here" ? setButtonText("Already have an account? Log in here") : setButtonText("Don't have an account? Register here"))
 }
 
 return (
@@ -37,7 +38,8 @@ return (
     <div className="container containerBtn">
     <button type="button" className="registerLoginBtn" onClick={handleOnClick}>{buttonText}</button>
     </div>
-        
+
+       <FooterGlobal /> 
 </>
 )
 

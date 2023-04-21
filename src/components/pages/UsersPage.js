@@ -6,10 +6,16 @@ import Logo from "../navigation/Logo";
 import Logout from "../navigation/Logout";
 import ShowPost from "./userpage/ShowPost";
 import "../css/ProfileUser.css";
+import "../css/Buttons.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import FooterGlobal from "../constants/footer";
+
+
 const token = localStorage.getItem("myToken")
+let imgOk;
+let avatarOk;
 
 export default function UsersPage() {
     let params = useParams();
@@ -36,8 +42,12 @@ export default function UsersPage() {
             if(response.ok) {
             setProfile(data);
             setLoading(false);
-            let imgOk = (data.banner) ? `<img src="${data.banner}" alt="banner display" />` : `<p>Doesn't seem like ${data.name} has uploaded a banner photo just yet.</p>`
+            //if banner image
+            imgOk = (data.banner) ? <img src={data.banner} alt="banner display" className="bannerImage" /> : <p className="bannerText">Doesn't seem like {data.name} has uploaded a banner photo just yet.</p>
             console.log(data, imgOk)
+            // if avatar img
+            avatarOk = (data.avatar) ? <img src={data.banner} alt="Avatar display" className="avatarImage" /> :  <FontAwesomeIcon icon={faUser} className="fa-solid fa-3x avatarIcon" />
+            console.log(data)
             } 
 
         } catch (err) {
@@ -62,12 +72,11 @@ export default function UsersPage() {
         </div>
             <GoBack />
             <div className="profileDisplay">
-
                 <div className="bannerDisplay">
-                  <p>banner</p>
+                {imgOk}
                 </div>
                 <div className="avatar">
-                    <FontAwesomeIcon icon={faUser} className="fa-solid fa-3x avatarIcon" />
+                   {avatarOk}
                 </div>
                 
                 <div className="userInfo">
@@ -77,15 +86,16 @@ export default function UsersPage() {
                          <p>{profile._count.followers} followers</p> 
                         </div>
                         <div className="col following">
-                            <p>{profile._count.followers} following</p> 
+                            <p>{profile._count.following} following</p> 
                         </div>
                     </div>
                 </div>  
             </div>  
             <div className="container usersPosts">
-                <h2>{profile.name}'s latest posts</h2>
                 <ShowPost user={name}/>
             </div> 
+
+        <FooterGlobal />
     </div>         
     
        

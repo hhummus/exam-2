@@ -1,14 +1,25 @@
 import "../css/Nav.css";
 import "../css/SearchAndPostInputForm.css";
 import PostaPost from "../constants/PostAPost";
-import SearchForm from "../constants/SearchForm";
 import Logo from "../navigation/Logo";
 import Logout from "../navigation/Logout";
 import Posts from "./feed/Posts";
 import Profiles from "./feed/Profiles";
 import MyPosts from "./feed/MyPosts";
+import { useState } from "react";
+import FooterGlobal from "../constants/footer";
+
 
 function FeedPage() {
+
+    let [isActive, setIsActive] = useState("");
+ 
+    const handleOnClick = (e) => {
+    console.log(e.target.className)
+    setIsActive(e.target.className)
+
+    }
+
     return (
     <>
         <div className="container">
@@ -20,68 +31,35 @@ function FeedPage() {
         <div className="sectionOne">
             <div className="container">
             <PostaPost />
-            </div>
-            
+            </div>  
         </div>
 
-        <div className="sectionTwo" id="myGroup">
-            <div className="container">
-                <h2 className="feedTitle">Your feed</h2>
-                <div className="row feedNav">
-                    <div className="col">
-                    <a className="chooseFeed" data-toggle="collapse" href="#allPosts" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        All Posts
-                    </a>
-                    </div>
-                    
-                    <div className="col">
-                    <a className="chooseFeed" data-toggle="collapse" href="#allProfiles" role="button" aria-expanded="false" aria-controls="collapseExample2">
-                        Profiles
-                    </a>
-                    </div>
-                   
-                    <div className="col">
-                    <a className="chooseFeed" data-toggle="collapse" href="#yourPost" role="button" aria-expanded="false" aria-controls="collapseExample3">
-                        Your Posts
-                    </a>
-                    </div>       
-                    
-                </div>
+        <div className="container feedButtonContainer">
+            <div className="row">
+                <div className="col"> <button type="button" onClick={handleOnClick} className="buttonContainer allPosts">All Posts</button></div>
+                <div className="col"> <button type="button" onClick={handleOnClick} className="buttonContainer allProfiles">Profiles</button></div>
+                <div className="col"><button type="button" onClick={handleOnClick} className="buttonContainer yourPosts">Your Posts</button></div>
             </div>
-
-            
-            <div className="collapse" 
-            id="allPosts" 
-            data-parent="#myGroup">
-                <div className="search">
-                <SearchForm placeholder={"Search posts by ID..."} id={"SearchPosts"}/>
-            </div>
-                <div className="container feed">
-                    < Posts />
-                </div>
-            </div>
-            <div className="collapse" 
-            id="allProfiles" 
-            data-parent="#myGroup">
-                <div className="search">
-                <SearchForm placeholder={"Search profiles by name..."} id={"SearchProfiles"}/>
-            </div>
-                <div className="container feed">
-                    <Profiles/>
-                </div>
-            </div>
-            <div className="collapse" 
-            id="yourPost" 
-            data-parent="#myGroup">
-                <div className="container feed">
+        </div>
+        
+        <div className="feedContainer">
+            {isActive === "buttonContainer allPosts" ? 
+                <div className="container" key="allPosts">
+                    <Posts/>
+                </div>  :  isActive === "buttonContainer allProfiles" ? 
+                <div className="container">
+                    <Profiles />
+                </div> : isActive === "buttonContainer yourPosts" ?  
+                <div className="container">
                     <MyPosts/>
-                </div>
-            </div>
-        </div>  
+                 </div> : "" 
+            }   
+
+        </div>
         
-        
-    </>
-       
+
+        <FooterGlobal />      
+    </>   
     )
 }
 

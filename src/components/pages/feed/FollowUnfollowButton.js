@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { baseUrl, followProfilesEndpoint } from "../../constants/Api";
 import "../../css/Buttons.css";
-
 const token = localStorage.getItem("myToken")
 
 export default function FollowUnfollowButton({ followers, profileName }) {
+
     const [following, setFollowing] = useState(false);
 
     useEffect(() => {

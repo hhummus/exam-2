@@ -4,6 +4,7 @@ import { postsEndpoint, baseUrl  } from "../../constants/Api";
 import PostaComment from "./CommentOnPost";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import SearchForm from "../../constants/SearchForm";
 import "../../css/Posts.css";
 const token = localStorage.getItem("myToken");
 
@@ -14,6 +15,7 @@ const Posts = () => {
 
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [query, setQuery] = useState("");
     
     const getPosts = async () => {
         const settings = {
@@ -44,8 +46,12 @@ const Posts = () => {
       );
     // else return content 
     return (
-    <div>
-    {posts.map(post => (      
+    <div className="feedContainer">
+        <div className="row">
+            <SearchForm search = {(e) => setQuery(e.target.value)} />
+        </div>
+       
+    {posts.filter(post=>post.author.name.toLowerCase().includes(query)).map(post => (      
         <div className="posts" id={post.id} data-target={post.id} key={post.id}>
             <div className="postContainer">
                 <div className="row">
@@ -53,7 +59,6 @@ const Posts = () => {
                          <Link to={`/feed/profiles/${post.author.name}`}>{post.author.name}</Link>
                     </div>
                     <div className="col followContainer"> 
-                     
                     </div>
                 </div>
                 <div className="row postBody">

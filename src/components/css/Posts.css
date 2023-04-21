@@ -1,4 +1,5 @@
-.posts, .profiles {
+.posts, 
+.profiles {
     margin: 1rem 0 0 0;
     padding: 1rem 0.5rem;
 }
@@ -20,9 +21,9 @@
 .profileName a,
 .postContainer a {
     cursor: pointer;
-    color: #1B8ED6;
+    color: black;
     text-decoration: none;
-    font-weight: 700;
+
 }
 .profileName a {
     padding-left: 1rem;
@@ -37,7 +38,7 @@
 
 .postAPost{
     margin-top: 1.2rem;
-    background-color: #b56b039d;
+    background-color: #1B8ED6;
     border: none;
     border-radius: 0.2ch;
     color: white;
@@ -62,9 +63,12 @@
 }
 
 .labelpost{
-    background-color: #F8F7F7;
     padding: 0.3rem 0;
     border: none;
+}
+
+.SearchAndPostInputForm input:focus {
+    outline:1px solid #1B8ED6;
 }
 
 .commentOnPost,
@@ -75,25 +79,24 @@
 
 .commentOnPost {
     border:none;
-
 }
+.commentOnPost:focus {
+    outline: 1px solid #2462B7;  
+}
+
 .postAComment{
     margin-left: 0.4rem;
     padding-right: 0.4rem;
     padding-left: 0.4rem;
     border:none;
     background: none;
-    color: #b56b03;;
+    color: #1B8ED6;
 }
 .postAComment:hover{
-    background-color: #b56b03;
+    background-color: #2462B7;
     color: white;
 }
 
-.commentOnPost:focus {
-    outline: 1px solid #b56b03db;
-    
-}
 .post-id{
     color: #C9C9C9;
 }
@@ -117,11 +120,69 @@
     color: white;
     padding: 0.4rem 0.8rem;
 }
-.editYourPost button{
+.getIdButton,
+.editPost {
     background-color: #1B8ED6;
     border: none;
     border-radius: 0.2ch;
     color: white;
     padding: 0.4rem 0.8rem;
+}
+.editPost {
+    margin-top: 0.5rem;
+    width: -webkit-fill-available;
+}
+.editTitle, 
+.editBody {
+    width: inherit;
+    display: block;
+}
+
+#searchPosts {
+    border: none;
+    background-color: #F8F7F7;
+    padding: 1rem;  
+    margin: 0 auto;
+}
+
+.searchContainer {
+    margin: 0 auto;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+#visitYourProfil{
+    margin-top: 4rem;
+    cursor: pointer;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    background-color: aliceblue;
+    text-decoration: none;
+    font-weight: 700;
+}
+#visitYourProfil:hover{
+    color: aliceblue;
+    background-color: #0d6efd;
+}
+
+.noPostsYet {
+    margin: 2rem 0 4rem 0;
+    font-style: italic;
+}
+
+@media screen and (min-width: 769px) { 
+    .feedContainer,
+    .usersPosts {
+        width: 60vw;
+        margin: 0 auto;
+    }
+
+    .searchContainer {
+        width: 60vw;
+    }
+
+
 
 }

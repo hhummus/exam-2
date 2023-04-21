@@ -22,14 +22,14 @@
 .titleRegister {
   margin-right: 1rem;
   border: none;
-  border-bottom: 4px solid #B56A03;
+  border-bottom: 4px solid #2462b7;
   padding:0.2rem 0.5rem;
   margin-bottom: 1rem;
 }
 
 .login-cta:hover,
 .register-cta:hover {
-  background-color: #B56A03;
+  background-color: #2462b7;
   color: white;
 }
 
@@ -44,8 +44,8 @@
   margin-top: 1rem;
   background-color: transparent;
   font-style: italic;
-  color: #1B8ED6;
-  border: none
+  color: #2462b7;
+  border: none;
 }
 
 .card-body input, 
@@ -60,7 +60,7 @@
 }
 
 .card-body input:focus {
-outline: 2px solid #b56b03db;
+outline: 2px solid #2462b7;
 
 }
 
@@ -74,13 +74,13 @@ outline: 2px solid #b56b03db;
 }
 
 .labelLoginButton {
-  background-color: #b56b0399;
+  background-color:  #2462b7;
   color: white;
   padding:0.2rem 0.5rem;
   border: none;
 }
 .labelLoginButton:active{
-  background-color: #b56b03;
+  background-color:  #2462b7;
 }
 
 .commentContainer {

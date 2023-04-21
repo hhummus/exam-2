@@ -1,7 +1,13 @@
-.sectionOne, 
 .sectionTwo, 
 .sectionThree{
 margin-top: 5rem;
+}
+.sectionTwo{
+    padding: 0 0.70rem;
+}
+.sectionOne {
+    background-color: #e9ecef;
+    padding: 5rem 0;
 }
 
 .search,
@@ -9,10 +15,6 @@ margin-top: 5rem;
     margin-top: 2rem;;
 }
 
-
-.sectionTwo{
-    padding: 0 0.70rem;
-}
 .feedTitle {
     color: #B56A03;
     text-transform: uppercase;
@@ -23,6 +25,7 @@ margin-top: 5rem;
 .feedNav .col{
     margin-top: 1rem;
 }
+
 .chooseFeed{
     text-decoration: none;
     color: grey;
@@ -39,16 +42,27 @@ margin-top: 5rem;
     border: none;
     background-color: #F8F7F7;
     padding: 1rem;
+}
 
+.feedButtonContainer {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.SearchAndPostInputForm legend{
+    color: #1B8ED6;
 }
 
 
 /* if bigger than xx change settings*/
 @media screen and (min-width: 769px) {
-.sectionOne{
-    padding-top: 5rem;
+.SearchAndPostInputForm{
     width: 40vw;
     margin: 0 auto;
 }
-  
+
+.feedButtonContainer {
+    width: 70vw;
+}
+
 }
