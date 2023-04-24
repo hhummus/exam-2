@@ -113,15 +113,19 @@
     font-weight: 700;
 }
 
-.deleteYourPost button {
+.deleteButtonFirst {
     background-color: #b56b039d;
     border: none;
     border-radius: 0.2ch;
     color: white;
     padding: 0.4rem 0.8rem;
 }
+.deleteButtonModalBody {
+    width: -webkit-fill-available;
+}
 .getIdButton,
-.editPost {
+.editPost,
+.deleteButton {
     background-color: #1B8ED6;
     border: none;
     border-radius: 0.2ch;
@@ -170,6 +174,15 @@
 .noPostsYet {
     margin: 2rem 0 4rem 0;
     font-style: italic;
+}
+
+.smallAvatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 5ch;
+        margin: 0 0.3rem 0 0;
+       
+   
 }
 
 @media screen and (min-width: 769px) { 

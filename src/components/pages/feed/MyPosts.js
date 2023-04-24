@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { myPostsEndpoint, baseUrl  } from "../../constants/Api";
 import "../../css/Posts.css";
-import deletePost from "./Delete";
+import DeleteMyPost from "./Delete";
 import EditMyPost from "./EditMyPost";
 import { Link } from "react-router-dom";
 
@@ -60,8 +60,7 @@ const MyPosts = () => {
                     <EditMyPost  postId={Number(post.id)}/>
              
                 <div className="col-3 deleteYourPost">
-                    <button type="button" onClick={deletePost} data-target={post.id}>Delete
-                    </button>
+                    <DeleteMyPost postId={Number(post.id)} />
                 </div>
             </div>
             

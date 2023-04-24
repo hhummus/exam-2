@@ -5,9 +5,6 @@ import RegisterForm from "./login/Registerform";
 import "../../components/css/Login.css";
 import FooterGlobal from "../constants/footer";
 
-
-
-
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
   const [buttonText, setButtonText] = useState("Don't have an account? Register here");
@@ -39,10 +36,8 @@ return (
     <button type="button" className="registerLoginBtn" onClick={handleOnClick}>{buttonText}</button>
     </div>
 
-       <FooterGlobal /> 
+    <FooterGlobal /> 
 </>
-)
-
-}
+)}
 
 

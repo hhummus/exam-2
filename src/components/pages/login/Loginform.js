@@ -2,8 +2,6 @@ import { baseUrl, authEndpoint } from "../../constants/Api";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
-export let token = '';
-export let name = '';
 const errorLogin = document.getElementById("tryAgain");
 
 // ------ using formik and yup -------- //
@@ -26,7 +24,8 @@ const LoginForm = () => {
                     // getting values from the login input and storing them in body
                     body:JSON.stringify(values),
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                       
                     }};
                 try {
                     // api request
@@ -35,8 +34,8 @@ const LoginForm = () => {
                     if(response.ok) {
                       console.log(data)
                         // saved to localStorage
-                        token = data.accessToken; 
-                        name = data.name;
+                        const token = data.accessToken; 
+                        const name = data.name;
                         localStorage.setItem('myToken', token); 
                         localStorage.setItem('name', name)
                         // going to feed page if response is ok
@@ -91,3 +90,4 @@ const LoginForm = () => {
       );
 }
 export default LoginForm;
+

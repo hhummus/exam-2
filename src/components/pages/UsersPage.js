@@ -39,7 +39,7 @@ export default function UsersPage() {
         const response = await fetch(baseUrl + followProfilesEndpoint + name, settings);
         setLoading(true);
         const data = await response.json();
-            if(response.ok) {
+        if(response.ok) {
             setProfile(data);
             setLoading(false);
             //if banner image
@@ -48,8 +48,7 @@ export default function UsersPage() {
             // if avatar img
             avatarOk = (data.avatar) ? <img src={data.banner} alt="Avatar display" className="avatarImage" /> :  <FontAwesomeIcon icon={faUser} className="fa-solid fa-3x avatarIcon" />
             console.log(data)
-            } 
-
+        } 
         } catch (err) {
             setLoading(false);
             console.log('error', err);
@@ -60,7 +59,7 @@ export default function UsersPage() {
         <span>
             <FontAwesomeIcon icon={faSpinner} className="fa-solid fa-spinner" />
         </span>
-      );
+    );
     // when data is ready return the content
     return (
     <div>
@@ -94,11 +93,8 @@ export default function UsersPage() {
             <div className="container usersPosts">
                 <ShowPost user={name}/>
             </div> 
-
-        <FooterGlobal />
-    </div>         
-    
-       
+            <FooterGlobal />
+    </div>          
     )
 }
 

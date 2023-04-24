@@ -9,15 +9,12 @@ import MyPosts from "./feed/MyPosts";
 import { useState } from "react";
 import FooterGlobal from "../constants/footer";
 
-
 function FeedPage() {
-
     let [isActive, setIsActive] = useState("");
  
     const handleOnClick = (e) => {
     console.log(e.target.className)
     setIsActive(e.target.className)
-
     }
 
     return (
@@ -54,10 +51,8 @@ function FeedPage() {
                     <MyPosts/>
                  </div> : "" 
             }   
-
         </div>
         
-
         <FooterGlobal />      
     </>   
     )

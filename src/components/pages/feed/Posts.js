@@ -4,8 +4,10 @@ import { postsEndpoint, baseUrl  } from "../../constants/Api";
 import PostaComment from "./CommentOnPost";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import SearchForm from "../../constants/SearchForm";
 import "../../css/Posts.css";
+
 const token = localStorage.getItem("myToken");
 
 const Posts = () => {
@@ -32,7 +34,6 @@ const Posts = () => {
         if(response.ok) {
             setPosts(data);
             setLoading(false);
-            console.log(data);
         } 
         } catch (err) {
         console.log('error', err);
@@ -56,7 +57,7 @@ const Posts = () => {
             <div className="postContainer">
                 <div className="row">
                     <div className="col">
-                         <Link to={`/feed/profiles/${post.author.name}`}>{post.author.name}</Link>
+                        <Link to={`/feed/profiles/${post.author.name}`}>{(post.author.avatar) ? <img src={post.author.avatar} alt="Avatar display" className="smallAvatar" /> :  <FontAwesomeIcon icon={faUser} className="fa-solid avatarIcon" />} {post.author.name}</Link>
                     </div>
                     <div className="col followContainer"> 
                     </div>
@@ -68,6 +69,11 @@ const Posts = () => {
                     </div>
                     <div className="col-3">   
                         <small className="post-id">id {post.id}</small>
+                    </div>
+                    <div className="row">
+                        <div className="col">                     
+                            {(post.media) ? <img src={post.media} alt="media display in post" className="bannerImage"/> : '' }
+                        </div>
                     </div>
                     <PostaComment id={Number(post.id)}/> 
                 </div>

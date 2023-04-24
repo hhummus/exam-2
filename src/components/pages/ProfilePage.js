@@ -36,7 +36,7 @@ export default function ProfilePage() {
             // api request
             const response = await fetch(baseUrl + myPostsEndpoint + name, settings);
             const data = await response.json();
-    
+
             if (response.ok){
             getMyPosts(data);
             setLoading(false);
@@ -45,22 +45,22 @@ export default function ProfilePage() {
             //if avatar image
             avatarOk = (data.avatar) ? <img src={data.avatar} alt="Avatar display" className="avatarImage" /> :  <FontAwesomeIcon icon={faUser} className="fa-solid fa-3x avatarIcon" />
             console.log(data)
-            
-
              }
+
             if(!response.ok) {
                 console.log("error");
             } 
+
             } catch (err) {
             console.log('error', err);
             }
         } 
      // return a Spinner when loading is true
-     if(loading) return (
+    if(loading) return (
         <span>
             <FontAwesomeIcon icon={faSpinner} className="fa-solid fa-spinner" />
         </span>
-      );
+    );
     // else return content 
     return (
     <>
@@ -81,7 +81,6 @@ export default function ProfilePage() {
      
         <div className="userInfo">
             <h1>{myPosts.name}</h1>
-
             <div className="row">
                 <div className="col">
                     <UpdateAvatar />
@@ -97,9 +96,9 @@ export default function ProfilePage() {
                     <p>{myPosts._count.following} following</p> 
                 </div>
             </div>
-
         </div>  
-    </div>  
+    </div> 
+     
     <div className="container usersPosts">
         <ShowPost user={name}/>
     </div> 
