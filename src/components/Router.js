@@ -13,7 +13,7 @@ const Pages = () => {
         <Route path="profile/:id" element={<ProfilePage />} />
         <Route path="your-profil/:name" element={<UsersPage />} />
 
-        <Route path="*" element={<div>feil</div>} /> 
+        <Route path="*" element={<div>Please check that your paths are correct before trying again.</div>} /> 
       </Routes>
     </Router>
   );
