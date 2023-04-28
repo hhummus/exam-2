@@ -56,20 +56,19 @@ function UpdateAvatar() {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="avatarTitle">Upload Avatar</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div className="modal-body">
                         <form onSubmit={formik.handleSubmit}>
                         <small id="tryAgain">Check your wifi network and try again.</small>
                      
                         <label htmlFor="avatar"></label>
-                        <input
+                        <input 
+                        pattern="https://.*" 
+                        title="Must be a link containing www, and end with .jpg"
                         id="avatar"
                         name="avatar"
-                        type="text"
-                        placeholder="Must be a valid URL..."
+                        type="url"
+                        placeholder="www.some-website/avatar-photo.jpg"
                         className="avatarInput"
                         onChange={formik.handleChange}
                         value={formik.values.avatar}
