@@ -4,7 +4,7 @@ import { useNavigate} from "react-router-dom";
       let navigate = useNavigate();
       return (
           <>
-            <button className="goBack" onClick={() => navigate(-1)}>{"<"}</button> 
+            <button className="goBack" onClick={() => navigate(-1)}>Go back</button> 
           </>
       );
   };
