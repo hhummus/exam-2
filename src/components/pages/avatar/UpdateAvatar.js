@@ -13,7 +13,7 @@ function UpdateAvatar() {
                 avatar: '',
             },
             validationSchema: yup.object({
-                avatar: yup.string('must be a valid url')
+                avatar: yup.string('must be a valid url, be a link containing https and end with .jpg')
               }),
             onSubmit: values => {
 
@@ -68,7 +68,6 @@ function UpdateAvatar() {
                         id="avatar"
                         name="avatar"
                         type="url"
-                        placeholder="www.some-website/avatar-photo.jpg"
                         className="avatarInput"
                         onChange={formik.handleChange}
                         value={formik.values.avatar}
