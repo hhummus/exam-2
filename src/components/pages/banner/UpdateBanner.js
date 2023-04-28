@@ -13,7 +13,7 @@ function UpdateBanner() {
                 banner: '',
             },
             validationSchema: yup.object({
-                banner: yup.string('must be a valid url')
+                banner: yup.string('must be a valid url, containing https and end with .jpg')
               }),
             onSubmit: values => {
 
@@ -68,7 +68,6 @@ function UpdateBanner() {
                         id="banner"
                         name="banner"
                         type="text"
-                        placeholder="www.some-website/banner-photo.jpg"
                         className="bannerInput"
                         onChange={formik.handleChange}
                         value={formik.values.banner}
