@@ -56,9 +56,6 @@ function UpdateBanner() {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="avatarTitle">Upload banner</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div className="modal-body">
                         <form onSubmit={formik.handleSubmit}>
@@ -66,10 +63,12 @@ function UpdateBanner() {
                      
                         <label htmlFor="banner"></label>
                         <input
+                        pattern="https://.*" 
+                        title="Must be a link containing www, and end with .jpg"
                         id="banner"
                         name="banner"
                         type="text"
-                        placeholder="Must be a valid URL..."
+                        placeholder="www.some-website/banner-photo.jpg"
                         className="bannerInput"
                         onChange={formik.handleChange}
                         value={formik.values.banner}
